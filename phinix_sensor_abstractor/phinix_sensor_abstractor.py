@@ -7,13 +7,13 @@ from rclpy.qos import QoSProfile, ReliabilityPolicy, QoSDurabilityPolicy
 
 
 topic_mappings_type = {
-"/oak/stereo/camera_info" : ["/nova/stereo/camera_info", CameraInfo],
-"/oak/rgb/image_raw" : ["/nova/rgb/image_raw", Image] ,
+"/oak/stereo/camera_info" : ["/phinix/stereo/camera_info", CameraInfo],
+"/oak/rgb/image_raw" : ["/phinix/rgb/image_raw", Image] ,
 }
 
 class NoveSensorAbstractorNode(Node):
     def __init__(self):
-        super().__init__('nova_sensor_abstractor_node')
+        super().__init__('phinix_sensor_abstractor_node')
 
         self._output_dict = {}
         self._input_dict = {}
@@ -47,9 +47,9 @@ class NoveSensorAbstractorNode(Node):
 
 def main(args=None):
     rclpy.init(args=args)
-    nova_sensor_abstractor_node = NoveSensorAbstractorNode()
-    rclpy.spin(nova_sensor_abstractor_node)
-    nova_sensor_abstractor_node.destroy_node()
+    phinix_sensor_abstractor_node = NoveSensorAbstractorNode()
+    rclpy.spin(phinix_sensor_abstractor_node)
+    phinix_sensor_abstractor_node.destroy_node()
     rclpy.shutdown()
 
 

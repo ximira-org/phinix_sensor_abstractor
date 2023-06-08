@@ -1,6 +1,6 @@
 from setuptools import setup
 
-package_name = 'nova_sensor_abstractor'
+package_name = 'phinix_sensor_abstractor'
 
 setup(
     name=package_name,
@@ -20,6 +20,6 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-        "nova_sensor_abstractor_py_exe = nova_sensor_abstractor.nova_sensor_abstractor:main"],
+        "phinix_sensor_abstractor_py_exe = phinix_sensor_abstractor.phinix_sensor_abstractor:main"],
     },
 )
